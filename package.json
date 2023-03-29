@@ -1,3 +1,4 @@
+
 {
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -6,5 +7,16 @@
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^7.0.3"
-  }
+  },
+  "name": "final_project",
+  "description": "|Name| ID | | ---------------| ---------------| | yanhang yang| 622115513| | sixuanli| 622115511| | Suchanun Sirijanya|622115040|",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
