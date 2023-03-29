@@ -22,12 +22,12 @@ app.use(bodyParser.urlencoded({
 
 app.use(express.static('public'));
 
-app.post('/api/login', async(req, res) => {
-    const { username, password } = req.body
-    const user = await User.findOne({ username }).lean()
+app.post('/api/login', async (req, res) => {
+    const {username, password} = req.body
+    const user = await User.findOne({username}).lean()
 
     if (!user) {
-        return res.json({ status: 'error', error: 'Invalid username/password' })
+        return res.json({status: 'error', error: 'Invalid username/password'})
     }
 
     if (await bcrypt.compare(password, user.password)) {
@@ -40,23 +40,23 @@ app.post('/api/login', async(req, res) => {
             JWT_SECRET
         )
 
-        return res.json({ status: 'ok', data: token })
+        return res.json({status: 'ok', data: token})
     }
 
-    res.json({ status: 'error', error: 'Invalid username/password' })
+    res.json({status: 'error', error: 'Invalid username/password'})
 })
 
-app.post('/api/register', async(req, res) => {
+app.post('/api/register', async (req, res) => {
     // get password
     // const { username, password: plainTextPassword} = req.body
-    const { username, password: plainTextPassword } = req.body
+    const {username, password: plainTextPassword} = req.body
 
     if (!username || typeof username !== 'string') {
-        return res.json({ status: 'error', error: 'Invalid username' })
+        return res.json({status: 'error', error: 'Invalid username'})
     }
 
     if (!plainTextPassword || typeof plainTextPassword !== 'string') {
-        return res.json({ status: 'error', error: 'Invalid password' })
+        return res.json({status: 'error', error: 'Invalid password'})
     }
 
     if (plainTextPassword.length < 5) {
@@ -78,51 +78,47 @@ app.post('/api/register', async(req, res) => {
     } catch (error) {
         if (error.code === 11000) {
             // duplicate key
-            return res.json({ status: 'error', error: 'Username already in use' })
+            return res.json({status: 'error', error: 'Username already in use'})
         }
         throw error
     }
 
     // console.log(await bcrypt.hash(password, 10))
-    res.json({ status: 'ok' })
+    res.json({status: 'ok'})
 })
 
 
-app.get("/", function(req, res) {
+app.get("/", function (req, res) {
     res.render('index');
 })
 
 
-
-app.get("/indexCustomer.ejs", function(req, res) {
+app.get("/indexCustomer.ejs", function (req, res) {
     res.render('indexCustomer');
 })
-app.get("/indexKitchen.ejs", function(req, res) {
+app.get("/indexKitchen.ejs", function (req, res) {
     res.render('indexKitchen');
 })
 
-app.post('/api/order.ejs', async(req, res) => {
+app.post('/api/order.ejs', async (req, res) => {
 
 })
 
-app.get("/register.ejs", function(req, res) {
+app.get("/register.ejs", function (req, res) {
     res.render('register');
 })
 
-app.get("/menu.ejs", function(req, res) {
+app.get("/menu.ejs", function (req, res) {
     res.render('menu')
 })
 
-app.get("/order.ejs", function(req, res) {
+app.get("/order.ejs", function (req, res) {
     res.render('order')
 })
 
 
 // remove cart item buttons
 // var removeCartItemButton = document.getElementsByClassName('btn-danger')
-
-
-
 
 
 app.listen("3001", () => {
