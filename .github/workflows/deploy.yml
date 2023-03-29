@@ -37,9 +37,9 @@ jobs:
       -
         name: prepare the docker-compose run
         run: |
-              mkdir 234-project
+              mkdir final-project-frontandback
               cp docker-compose.yml final-project-frontandback/docker-compose.yml
-              cd 234-project
+              cd final-project-frontandback
               docker-compose -H ${{ secrets.HOST_SERVER  }} down
               docker-compose -H ${{ secrets.HOST_SERVER  }} pull
               docker-compose -H ${{ secrets.HOST_SERVER  }} up -d
