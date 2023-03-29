@@ -8,10 +8,10 @@ const jwt = require('jsonwebtoken')
 
 const JWT_SECRET = 'asdjawejsgserg04u2mxpvqejd#@dfsdhpsdfkwasd'
 
-mongoose.connect('mongodb://localhost:27017/login-app-db', {
+mongoose.connect('mongodb://18.208.181.98:27017/login-app-db', {
     useNewUrlParser: true,
     useUnifiedTopology: true
-})
+});
 
 app.set('view engine', 'ejs');
 
@@ -121,6 +121,6 @@ app.get("/order.ejs", function (req, res) {
 // var removeCartItemButton = document.getElementsByClassName('btn-danger')
 
 
-app.listen("3001", () => {
-    console.log("Server is running on Port 3000.");
+app.listen("8080", () => {
+    console.log("Server is running on Port 8080.");
 });
