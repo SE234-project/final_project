@@ -8,10 +8,10 @@ const jwt = require('jsonwebtoken')
 
 const JWT_SECRET = 'asdjawejsgserg04u2mxpvqejd#@dfsdhpsdfkwasd'
 
-mongoose.connect('mongodb://localhost:27017/login-app-db', {
+mongoose.connect('mongodb://18.208.181.98:27017/login-app-db', {
     useNewUrlParser: true,
     useUnifiedTopology: true
-})
+});
 
 app.set('view engine', 'ejs');
 
