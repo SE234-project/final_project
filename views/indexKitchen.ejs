@@ -35,6 +35,8 @@
 </form>
 
 <script>
+  import res from "express/lib/response";
+
   const form = document.getElementById('login')
   form.addEventListener('submit', login)
 
@@ -54,8 +56,9 @@
       })
     }).then((res) => res.json())
 
-    if(result.status === 'ok'){
+    if (result.status === 'ok') {
       // no error
+      res.render('/order.ejs')
       console.log('Got the token: ', result.data)
     } else {
       alert(result.error)

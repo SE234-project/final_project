@@ -100,6 +100,11 @@ app.get("/indexCustomer.ejs", function(req, res) {
 app.get("/indexKitchen.ejs", function(req, res) {
     res.render('indexKitchen');
 })
+
+app.post('/api/order.ejs', async(req, res) => {
+
+})
+
 app.get("/register.ejs", function(req, res) {
     res.render('register');
 })
@@ -108,6 +113,9 @@ app.get("/menu.ejs", function(req, res) {
     res.render('menu')
 })
 
+app.get("/order.ejs", function(req, res) {
+    res.render('order')
+})
 
 
 // remove cart item buttons
