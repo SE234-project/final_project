@@ -2,7 +2,7 @@ name: deploy application
 'on':
   push:
     branches:
-      - docker-run-test-brach
+      - main
 jobs:
   docker:
     runs-on: ubuntu-latest
