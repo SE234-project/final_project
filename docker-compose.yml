@@ -1,7 +1,7 @@
 version: '3'
 services:
   app:
-    container_name: deploydocker
+    container_name: deploydockertest
     restart: always
     image:  yanhang1/final-project-frontandback2-test:latest
     ports:
