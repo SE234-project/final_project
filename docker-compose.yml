@@ -5,4 +5,4 @@ services:
     restart: always
     image:  yanhang1/final-project-frontandback2:latest
     ports:
-      - "8085:8080"
+      - "8086:8080"
