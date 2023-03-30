@@ -3,6 +3,6 @@ services:
   app:
     container_name: deploydocker
     restart: always
-    image:  yanhang1/final-project-frontandback2:latest
+    image:  yanhang1/final-project-frontandback2-test:latest
     ports:
       - "8085:8080"

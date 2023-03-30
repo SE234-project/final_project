@@ -33,13 +33,13 @@ jobs:
         with:
           context: .
           push: true
-          tags: yanhang1/final-project-frontandback2:latest
+          tags: yanhang1/final-project-frontandback2-test:latest
       -
         name: prepare the docker-compose run
         run: |
-              mkdir final-project-frontandback2
-              cp docker-compose.yml final-project-frontandback2/docker-compose.yml
-              cd final-project-frontandback2
+              mkdir final-project-frontandback2-test
+              cp docker-compose.yml final-project-frontandback2-test/docker-compose.yml
+              cd final-project-frontandback2-test
               docker-compose -H ${{ secrets.HOST_SERVER  }} down
               docker-compose -H ${{ secrets.HOST_SERVER  }} pull
               docker-compose -H ${{ secrets.HOST_SERVER  }} up -d
